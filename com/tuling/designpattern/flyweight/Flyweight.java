@@ -7,7 +7,7 @@
  * 为了使对象可以共享，需要将一些不能共享的状态外部化，这将增加程序的复杂性。
  * 读取享元模式的外部状态会使得运行时间稍微变长。
  */
-package com.tuling.designpattern;
+package com.tuling.designpattern.flyweight;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
