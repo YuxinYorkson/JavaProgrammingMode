@@ -62,6 +62,7 @@ class MySqlCommand implements ICommand {
     }
 }
 
+//Mysql实例工厂
 class MySqlDataBaseUtils implements IDateBaseUtils {
 
     @Override
@@ -91,6 +92,7 @@ class OracleCommand implements ICommand {
     }
 }
 
+//Oracle实例工厂
 class OracleDataBaseUtils implements IDateBaseUtils {
 
     @Override
