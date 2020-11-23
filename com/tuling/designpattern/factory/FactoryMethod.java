@@ -1,5 +1,5 @@
-/**
- * 定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使得一个类的实例化延迟到子类。
+/*
+  定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使得一个类的实例化延迟到子类。
  */
 package com.tuling.designpattern.factory;
 
@@ -8,7 +8,8 @@ public class FactoryMethod {
     public static void main(String[] args) {
 
         AbstractApplcation applcation = new ConcreteProductA();
-        Product product = applcation.getObject();
+        //AbstractApplcation applcation = new ConcreteProductB();
+        IProduct product = applcation.getObject();
         product.method();
 
     }
@@ -16,18 +17,17 @@ public class FactoryMethod {
 
 abstract class AbstractApplcation {
 
-    abstract Product createProduct();
+    abstract IProduct createProduct();
 
-    Product getObject() {
-        Product product = createProduct();
-        return product;
+    IProduct getObject() {
+        return createProduct();
     }
 }
 
 class ConcreteProductA extends AbstractApplcation {
 
     @Override
-    Product createProduct() {
+    IProduct createProduct() {
         return new ProductA();
     }
 }
@@ -35,7 +35,7 @@ class ConcreteProductA extends AbstractApplcation {
 class ConcreteProductB extends AbstractApplcation {
 
     @Override
-    Product createProduct() {
+    IProduct createProduct() {
         return new ProductB();
     }
 }
